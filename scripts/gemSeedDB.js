@@ -43,3 +43,15 @@ const gemSeed = [
         secondaryAbility: "If this is the second Diamond Cluster played this turn, gain 4 aether instead."
     }
 ]
+
+db.Gem
+    .remove({})
+    .then(() => db.Gem.collection.insertMany(gemSeed))
+    .then(data => {
+        console.log(data.result.n + " records inserted!");
+        process.exit(0);
+    })
+    .catch(err => {
+        console.error(err);
+        process.exit(1);
+    });
