@@ -1,16 +1,16 @@
 const router = require("express").Router();
-const booksController = require("../../controllers/booksController");
+const booksController = require("../../controllers/controlrelic");
 
 // Matches with "/api/books"
 router.route("/")
-    .get(booksController.findAll)
-    .post(booksController.create);
+    .get(controlrelic.findAll)
+    .post(controlrelic.create);
 
 // Matches with "/api/books/:id"
 router
     .route("/:id")
-    .get(booksController.findById)
-    .put(booksController.update)
-    .delete(booksController.remove);
+    .get(controlrelic.findById)
+    .put(controlrelic.update)
+    .delete(controlrelic.remove);
 
 module.exports = router;
