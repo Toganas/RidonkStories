@@ -1,13 +1,13 @@
 
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Home } from "./Home";
-import { CardsMarket } from "./CardsMarket";
+import { Home } from "./pages/Home";
+import { CardsMarket } from "./pages/CardsMarketCardsMarket";
 import { Layout } from "./components/Layout";
 import { NavigationBar } from './components/NavigationBar';
-import { CreateMarket} from "./CreateMarket";
-import {SavedMarket} from "./SavedMarket";
-import {Dashboard} from "./Dashboard";
+import { CreateMarket} from "./pages/CreateMarket";
+import {SavedMarket} from "./pages/SavedMarket";
+import {Dashboard} from "./Dashboardpages/Dashboard";
 
 class App extends Component {
   render() {
