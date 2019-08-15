@@ -1,15 +1,62 @@
-{
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
-}
+[
+  {
+    "id": 1,
+    "image": "./assets/images/barbie1.jpg",
+    "clicked": false
+  },
+  {
+    "id": 2,
+    "image": "./assets/images/barbie2.jpg",
+    "clicked": false
+  },
+  {
+    "id": 3,
+    "image": "./assets/images/barbie3.jpg",
+    "clicked": false
+  },
+  {
+    "id": 4,
+    "image": "./assets/images/barbie4.jpg",
+    "clicked": false
+  },
+  {
+    "id": 5,
+    "image": "./assets/images/barbie5.jpg",
+    "clicked": false
+  },
+  {
+    "id": 6,
+    "image": "./assets/images/barbie6.jpg",
+    "clicked": false
+  },
+  {
+    "id": 7,
+    "image": "./assets/images/barbie7.jpg",
+    "clicked": false
+  },
+  {
+    "id": 8,
+    "image": "./assets/images/barbie8.jpg",
+    "clicked": false
+  },
+  {
+    "id": 9,
+    "image": "./assets/images/barbie9.jpg",
+    "clicked": false
+  },
+  {
+    "id": 10,
+    "image": "./assets/images/barbie10.jpg",
+    "clicked": false
+  },
+  {
+    "id": 11,
+    "image": "./assets/images/barbie11.jpg",
+    "clicked": false
+  },
+  {
+    "id": 12,
+    "image": "./assets/images/barbie12.jpeg",
+    "clicked": false
+  }
+]
