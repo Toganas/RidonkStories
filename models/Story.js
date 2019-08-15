@@ -33,7 +33,6 @@ const StorySchema = new mongoose.Schema({
     category: [
         {
             type: String,
-            default: "Other"
         }
     ],
     date: {
