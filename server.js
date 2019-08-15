@@ -41,11 +41,14 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 const PORT = process.env.PORT || 3001;
-
+// Local Database
 // Connect to the Mongo DB
-mongoose.connect(
-  "mongodb://localhost/gravesholdInn"
-);
+// mongoose.connect(
+
+// "mongodb://localhost/gravesholdInn"
+
+
+// );
 
 // Start the API server
 app.listen(PORT, function () {
