@@ -44,25 +44,20 @@ class ShareStories extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const newStory = {
-      user: this.state.user,
-      title: this.state.title,
-      story: this.state.story,
-      category: this.state.category
+    if (this.state.title && this.state.story && this.state.category) {
+
+      StoryAPI.saveStory ({
+        user: this.state.user,
+        title: this.state.title,
+        story: this.state.story,
+        category: this.state.category
+      })
+      .then(res => this.loadStories())
+      .catch(err => console.log(err));
+
     }
     
-    console.log(newStory);
-
-    // if (this.state.title && this.state.author) {
-    //   StoryAPI.saveStory({
-    //     title: this.state.title,
-    //     story: this.state.story,
-    //     lol: this.state.lol,
-    //     
-    //   })
-    //     .then(res => this.loadStories())
-    //     .catch(err => console.log(err));
-    // }
+    
   };
 
 
