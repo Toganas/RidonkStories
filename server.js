@@ -40,7 +40,7 @@ if (process.env.NODE_ENV === "production") {
 // Routes
 app.use(routes);
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 // Local Database
 // Connect to the Mongo DB
 // mongoose.connect(

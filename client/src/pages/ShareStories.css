@@ -1,12 +1,13 @@
 .storyForm {
-    background-color:#E6A891;
+    background-color:rgb(238, 232, 230);
     margin: 3em 10em;
     padding:4em;
+   max-width: 80%;
+   box-shadow: 0 20px 28px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
 
   .formText{
-
     font-size: 30px;
     color: darkslategray;
   }
