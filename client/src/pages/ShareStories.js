@@ -1,10 +1,15 @@
 import React, {Component} from "react";
-import { Form, Row, Button, Container } from 'react-bootstrap';
+
+import { Form, Col, Button } from 'react-bootstrap';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+
 import "./ShareStories.css"
 import StoryAPI from "../utils/StoryAPI";
 
 
 class ShareStories extends Component {
+//const { user } = this.props.auth;
 
   state = {
 
@@ -14,7 +19,16 @@ class ShareStories extends Component {
     category: ""
   };
 
+  componentDidMount = () => {
+    const { user } = this.props.auth;
+    this.setState({
+      user: user.id
+    })
+    
+  }
+
   loadStories = () => {
+    
     StoryAPI.getStory()
       .then(res =>
         this.setState({ user: "" , title: "", stories: res.data, category: "" })
@@ -32,27 +46,25 @@ class ShareStories extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const newStory = {
-      title: this.state.title,
-      story: this.state.story,
-      category: this.state.category
+    if (this.state.title && this.state.story && this.state.category) {
+
+      StoryAPI.saveStory ({
+        user: this.state.user,
+        title: this.state.title,
+        story: this.state.story,
+        category: this.state.category
+      })
+      .then(res => this.loadStories())
+      .catch(err => console.log(err));
+
     }
     
-    console.log(newStory)
-    // if (this.state.title && this.state.author) {
-    //   StoryAPI.saveStory({
-    //     title: this.state.title,
-    //     story: this.state.story,
-    //     lol: this.state.lol,
-    //     
-    //   })
-    //     .then(res => this.loadStories())
-    //     .catch(err => console.log(err));
-    // }
+    
   };
 
 
   render() {
+    
     return (
       
       <Container>
@@ -123,4 +135,12 @@ class ShareStories extends Component {
 
 };
 
-export default ShareStories;
+ShareStories.propTypes = {
+  auth: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(mapStateToProps)(ShareStories);

@@ -3,6 +3,7 @@ import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import styled from 'styled-components';
 import logo from "../../assets/images/logo.png"
 
+
 const Styles = styled.div`
   .navbar {
     background-color: #222;
@@ -17,6 +18,10 @@ const Styles = styled.div`
 `;
 
 class NavigationBar extends Component {
+
+
+
+    
     render() {
         return (
             <Styles>
@@ -70,7 +75,9 @@ class NavigationBar extends Component {
                             <Nav.Link href="/login">Log In</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
+
                             <Nav.Link href="/register">Sign up</Nav.Link>
+
                         </Nav.Item>
 
                     </Nav>
