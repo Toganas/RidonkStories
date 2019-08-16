@@ -1,6 +1,20 @@
-const mongoose = require("mongoose");
-const db = require("../models");
-const key = require("../config/keys")
+const router = require("express").Router();
+const storyController = require("../../controllers/storyController")
+
+
+router.route("/")
+    .get(storyController.create)
+    .post(storyController.findAll);
+
+router.route("/:id")
+    .get(storyController.remove);
+    
+    
+module.exports = router;
+
+// const mongoose = require("mongoose");
+// const db = require("../models");
+// const key = require("../config/keys")
 // const express = require("express");
 // const router = express.Router();
 // const { check, validationResult } = require("express-validator");
@@ -48,17 +62,17 @@ const key = require("../config/keys")
 
 // module.exports = router;
 
-db.Story
-    .then(() => db.Story.collection.insertOne(
-        {
-            "user": req.user.id,
-            "title": req.body.title,
-            "story": req.body.story,
-            "category": req.body.category,
-            "lol": [],
-        }
-    ))
-    .catch(err => {
-        console.error(err);
-        process.exit(1)
-    })
+// db.Story
+//     .then(() => db.Story.collection.insertOne(
+//         {
+//             "user": req.user.id,
+//             "title": req.body.title,
+//             "story": req.body.story,
+//             "category": req.body.category,
+//             "lol": [],
+//         }
+//     ))
+//     .catch(err => {
+//         console.error(err);
+//         process.exit(1)
+//     })
