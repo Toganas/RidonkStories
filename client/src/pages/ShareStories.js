@@ -55,6 +55,8 @@ class ShareStories extends Component {
       .then(res => this.loadStories())
       .catch(err => console.log(err));
 
+     
+
     }
     
     
