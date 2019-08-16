@@ -1,10 +1,13 @@
 import React, {Component} from "react";
 import { Form, Col, Button } from 'react-bootstrap';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import "./ShareStories.css"
 import StoryAPI from "../utils/StoryAPI";
 
 
 class ShareStories extends Component {
+//const { user } = this.props.auth;
 
   state = {
 
@@ -14,7 +17,16 @@ class ShareStories extends Component {
     category: ""
   };
 
+  componentDidMount = () => {
+    const { user } = this.props.auth;
+    this.setState({
+      user: user.id
+    })
+    
+  }
+
   loadStories = () => {
+    
     StoryAPI.getStory()
       .then(res =>
         this.setState({ user: "" , title: "", stories: res.data, category: "" })
@@ -33,12 +45,14 @@ class ShareStories extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     const newStory = {
+      user: this.state.user,
       title: this.state.title,
       story: this.state.story,
       category: this.state.category
     }
     
-    console.log(newStory)
+    console.log(newStory);
+
     // if (this.state.title && this.state.author) {
     //   StoryAPI.saveStory({
     //     title: this.state.title,
@@ -53,6 +67,7 @@ class ShareStories extends Component {
 
 
   render() {
+    
     return (
       <div>
 
@@ -119,4 +134,12 @@ class ShareStories extends Component {
 
 };
 
-export default ShareStories;
+ShareStories.propTypes = {
+  auth: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(mapStateToProps)(ShareStories);

@@ -28,26 +28,32 @@ class StoriesOfTheDay extends Component {
 
   render() {
     return(
-      <div class="container">
+      <div className="container">
 
-<div className="Stories of the Day">
-
-<Card style={{ width: '18rem' }}>
-  <Card.Body >
-    <Card.Title>
-
-    </Card.Title>
-    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-    <Card.Text>
-      Need to figure out how to show only three of the latest data here. 
-</Card.Text>
+      <div className="StoriesDay">
+        {this.state.stories.map(str => (
 
 
-  </Card.Body>
-</Card>
+          <Card style={{ width: 'auto'}}>
+            <Card.Body >
+              <Card.Title className="title">
+                {str.title}
+              </Card.Title>
 
-</div>
+              <Card.Text className="story">
+                {str.story}
+              </Card.Text>
+
+
+            </Card.Body>
+          </Card>
+
+        ))}
+
+
+
       </div>
+    </div>
     )
   }
 
