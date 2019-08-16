@@ -68,17 +68,17 @@ class NavigationBar extends Component {
               <Nav className="float-right">
                   <Nav.Item>
                       <Nav.Link>
-                          <Link to="/">Log In</Link>
+                          <Link to="/login">Log In</Link>
                       </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                       <Nav.Link>
-                          <Link to="/CardsMarket">Log out</Link>
+                          <Link to="">Log out</Link>
                       </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                       <Nav.Link>
-                          <Link to="/">Sign up</Link>
+                          <Link to="/register">Sign up</Link>
                       </Nav.Link>
                   </Nav.Item>
   
