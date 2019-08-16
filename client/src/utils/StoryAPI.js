@@ -2,12 +2,12 @@ import axios from "axios" ;
 
 export default {
 
-    saveStory: function(storyData) {
-        return axios.post("/api/stories", storyData);
+    saveStory: function() {
+        return axios.post("/api/stories");
     },
 
     getStory: function(id) {
-        return axios.get("/api/stories/" + id);
+        return axios.get("/api/stories/");
         
     },
 
