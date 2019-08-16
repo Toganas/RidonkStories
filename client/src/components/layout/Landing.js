@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Jumbotron, Container, Breadcrumb, BreadcrumbItem } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 class Landing extends Component {
   render() {
