@@ -11,15 +11,13 @@ class ShareStories extends Component {
     user: "",
     title: "",
     story: "",
-    lol: "",
-    favorite: "",
     category: ""
   };
 
   loadStories = () => {
     StoryAPI.getStory()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+        this.setState({ user: "" , title: "", stories: res.data, category: "" })
       )
       .catch(err => console.log(err));
   };
@@ -46,7 +44,7 @@ class ShareStories extends Component {
     //     title: this.state.title,
     //     story: this.state.story,
     //     lol: this.state.lol,
-    //     favorite: this.state.lol
+    //     
     //   })
     //     .then(res => this.loadStories())
     //     .catch(err => console.log(err));
