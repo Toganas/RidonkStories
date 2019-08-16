@@ -25,7 +25,8 @@ class ShareStories extends Component {
   };
 
   handleInputChange = event => {
-    const { name, value } = event.target;
+    const name = event.target.name;
+    const value = event.target.value;
     this.setState({
       [name]: value
     });
@@ -33,16 +34,23 @@ class ShareStories extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
-      StoryAPI.saveStory({
-        title: this.state.title,
-        story: this.state.story,
-        lol: this.state.lol,
-        favorite: this.state.lol
-      })
-        .then(res => this.loadStories())
-        .catch(err => console.log(err));
+    const newStory = {
+      title: this.state.title,
+      story: this.state.story,
+      category: this.state.category
     }
+    
+    console.log(newStory)
+    // if (this.state.title && this.state.author) {
+    //   StoryAPI.saveStory({
+    //     title: this.state.title,
+    //     story: this.state.story,
+    //     lol: this.state.lol,
+    //     favorite: this.state.lol
+    //   })
+    //     .then(res => this.loadStories())
+    //     .catch(err => console.log(err));
+    // }
   };
 
 
@@ -51,7 +59,7 @@ class ShareStories extends Component {
       <div>
 
         <div className="row storyForm">
-          <div className="col-md-10 formtowrite">
+          <div className="col-md-12 formtowrite">
 
 
             <Form>
@@ -59,7 +67,7 @@ class ShareStories extends Component {
                 <Form.Label class="formText">Title:</Form.Label>
 
                 <Form.Control size="lg" type="title" 
-                name={this.state.title}
+                name="title"
                 onChange={this.handleInputChange}
                 />
 
@@ -69,7 +77,7 @@ class ShareStories extends Component {
               <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label class="formText">Story:</Form.Label>
                 <Form.Control as="textarea" rows="5"
-                 name={this.state.story}
+                 name="story"
                  onChange={this.handleInputChange}
                 />
               </Form.Group>
@@ -77,7 +85,7 @@ class ShareStories extends Component {
               <Form.Group as={Col} controlId="formGridState">
                 <Form.Label class="formText">Categories</Form.Label>
                 <Form.Control as="select"
-                 name={this.state.category}  // not sure if this will do anything
+                 name="category"  // not sure if this will do anything
                  onChange={this.handleInputChange}
                 >
                   <option>Choose...</option>
@@ -97,7 +105,7 @@ class ShareStories extends Component {
               </Form.Group>
 
               <Button variant="primary" type="submit"
-              onSubmit={this.handleFormSubmit}
+              onClick={this.handleFormSubmit}
               >
                 Submit
   </Button>
@@ -114,59 +122,3 @@ class ShareStories extends Component {
 };
 
 export default ShareStories;
-
-
-
-
-
-// export const ShareStories = () => (
-
-//   <Styles>
-
-//     <div className="row storyForm">
-//       <div className="col-md-12 formtowrite">
-
-
-//         <Form>
-//           <Form.Group controlId="exampleForm.ControlInput1">
-//             <Form.Label>Title:</Form.Label>
-
-//             <Form.Control size="lg" type="title" />
-
-//           </Form.Group>
-
-
-//           <Form.Group controlId="exampleForm.ControlTextarea1">
-//             <Form.Label>Story:</Form.Label>
-//             <Form.Control as="textarea" rows="3" />
-//           </Form.Group>
-
-//           <Form.Group as={Col} controlId="formGridState">
-//             <Form.Label>Categories</Form.Label>
-//             <Form.Control as="select">
-//               <option>Choose...</option>
-//               <option>Animal</option>
-//               <option>Baby/Kids</option>
-//               <option>Driving</option>
-//               <option>Work</option>
-//               <option>Pregnancy</option>
-//               <option>Education</option>
-//               <option>Sports</option>
-//               <option>Drinking</option>
-//               <option>Coding</option>
-//               <option>Vacation</option>
-//               <option>In-Laws</option>
-//               <option>Other</option>
-//             </Form.Control>
-//           </Form.Group>
-
-//           <Button variant="primary" type="submit">
-//             Submit
-//   </Button>
-//         </Form>
-//       </div>
-//     </div>
-
-//   </Styles>
-
-// )
