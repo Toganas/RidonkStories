@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import styled from 'styled-components';
 import logo from "../../assets/images/logo.png"
@@ -32,7 +31,7 @@ class NavigationBar extends Component {
                         />
                     </Navbar.Brand>
 
-                    <h1 class="font-weight-bold">RIDONK STORIES</h1>
+                    <h1 className="font-weight-bold">RIDONK STORIES</h1>
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
@@ -68,19 +67,13 @@ class NavigationBar extends Component {
                     </Nav>
                     <Nav className="float-right">
                         <Nav.Item>
-                            <Nav.Link>
-                                <Link to="/login">Log In</Link>
-                            </Nav.Link>
+                            <Nav.Link to="/login">Log In</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link>
-                                <Link to="">Log out</Link>
-                            </Nav.Link>
+                            <Nav.Link to="">Log out</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link>
-                                <Link to="/register">Sign up</Link>
-                            </Nav.Link>
+                            <Nav.Link to="/register">Sign up</Nav.Link>
                         </Nav.Item>
 
                     </Nav>
