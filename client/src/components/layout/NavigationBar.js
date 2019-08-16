@@ -70,9 +70,6 @@ class NavigationBar extends Component {
                             <Nav.Link href="/login">Log In</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link href="">Log out</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
                             <Nav.Link href="/register">Sign up</Nav.Link>
                         </Nav.Item>
 
