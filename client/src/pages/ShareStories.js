@@ -1,24 +1,17 @@
 import React, {Component} from "react";
-
 import { Form, Col, Button } from 'react-bootstrap';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-
 import "./ShareStories.css"
 import StoryAPI from "../utils/StoryAPI";
-
-
 class ShareStories extends Component {
 //const { user } = this.props.auth;
-
   state = {
-
     user: "",
     title: "",
     story: "",
     category: ""
   };
-
   componentDidMount = () => {
     const { user } = this.props.auth;
     this.setState({
@@ -26,7 +19,6 @@ class ShareStories extends Component {
     })
     
   }
-
   loadStories = () => {
     
     StoryAPI.getStory()
@@ -35,7 +27,6 @@ class ShareStories extends Component {
       )
       .catch(err => console.log(err));
   };
-
   handleInputChange = event => {
     const name = event.target.name;
     const value = event.target.value;
@@ -43,11 +34,9 @@ class ShareStories extends Component {
       [name]: value
     });
   };
-
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.title && this.state.story && this.state.category) {
-
       StoryAPI.saveStory ({
         user: this.state.user,
         title: this.state.title,
@@ -56,49 +45,33 @@ class ShareStories extends Component {
       })
       .then(res => this.loadStories())
       .catch(err => console.log(err));
-
-     
-
     }
     
     
   };
-
-
   render() {
     
     return (
-      
-      <Container>
-        <div className="Row storyForm rounded">
-          <div className="Col-md-12 formtowrite">
-
-
+      <div>
+        <div className="row storyForm">
+          <div className="col-md-12 formtowrite">
             <Form>
-              <Form.Group as={Row} controlId="exampleForm.ControlInput1">
-                <Form.Label className="formText">Title</Form.Label>
-              
+              <Form.Group controlId="exampleForm.ControlInput1">
+                <Form.Label class="formText">Title:</Form.Label>
                 <Form.Control size="lg" type="title" 
                 name="title"
                 onChange={this.handleInputChange}
                 />
-              
               </Form.Group>
-
-
-              <Form.Group as={Row} controlId="exampleForm.ControlTextarea1">
-                <Form.Label class="formText">Story</Form.Label>
-                
+              <Form.Group controlId="exampleForm.ControlTextarea1">
+                <Form.Label class="formText">Story:</Form.Label>
                 <Form.Control as="textarea" rows="5"
                  name="story"
                  onChange={this.handleInputChange}
                 />
-                
               </Form.Group>
-
-              <Form.Group as={Row} controlId="formGridState">
+              <Form.Group as={Col} controlId="formGridState">
                 <Form.Label class="formText">Categories</Form.Label>
-                
                 <Form.Control as="select"
                  name="category"  // not sure if this will do anything
                  onChange={this.handleInputChange}
@@ -117,9 +90,7 @@ class ShareStories extends Component {
                   <option name="In-Laws">In-Laws</option>
                   <option name="Other">Other</option>
                 </Form.Control>
-                
               </Form.Group>
-
               <Button variant="primary" type="submit"
               onClick={this.handleFormSubmit}
               >
@@ -128,21 +99,14 @@ class ShareStories extends Component {
             </Form>
           </div>
         </div>
-
-     </Container>   
-
+      </div>
     );
   };
-
-
 };
-
 ShareStories.propTypes = {
   auth: PropTypes.object.isRequired
 }
-
 const mapStateToProps = state => ({
   auth: state.auth
 });
-
 export default connect(mapStateToProps)(ShareStories);
