@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
 
+
 const StorySchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "users"
+        ref: "users",
+        default: "Anonymous"
     },
     title: {
         type: String,
@@ -16,7 +18,7 @@ const StorySchema = new mongoose.Schema({
     lol: [
         {
             user: {
-                type: mongoose.Schema.types.objectid,
+                type: mongoose.Schema.Types.ObjectId,
                 ref: "users"
             }
         }
@@ -25,7 +27,7 @@ const StorySchema = new mongoose.Schema({
     // favorites: [
     //     {
     //         user: {
-    //             type: mongoose.Schema.types.objectid,
+    //             type: mongoose.Schema.Types.ObjectId,
     //             ref: "users"
     //         }
     //     }
@@ -40,5 +42,6 @@ const StorySchema = new mongoose.Schema({
         default: Date.now
     }
 })
+const Story = mongoose.model("story", StorySchema)
 
-module.exports = Story = mongoose.model("story", StorySchema)
+module.exports = Story
