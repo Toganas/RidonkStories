@@ -51,7 +51,7 @@ class ShareStories extends Component {
       <div>
 
         <div className="row storyForm">
-          <div className="col-md-12 formtowrite">
+          <div className="col-md-10 formtowrite">
 
 
             <Form>
