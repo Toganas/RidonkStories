@@ -57,21 +57,21 @@ class ShareStories extends Component {
         <div className="Col-md-12 formtowrite">
           <Form>
             <Form.Group as={Row} controlId="exampleForm.ControlInput1">
-              <Form.Label class="formText">Title</Form.Label>
+              <Form.Label className="formText">Title</Form.Label>
               <Form.Control size="lg" type="title"
                 name="title"
                 onChange={this.handleInputChange}
               />
             </Form.Group>
             <Form.Group as={Row} controlId="exampleForm.ControlTextarea1">
-              <Form.Label class="formText">Story</Form.Label>
+              <Form.Label className="formText">Story</Form.Label>
               <Form.Control as="textarea" rows="5"
                 name="story"
                 onChange={this.handleInputChange}
               />
             </Form.Group>
             <Form.Group as={Row} controlId="formGridState">
-              <Form.Label class="formText">Categories</Form.Label>
+              <Form.Label className="formText">Categories</Form.Label>
               <Form.Control as="select"
                 name="category"  // not sure if this will do anything
                 onChange={this.handleInputChange}
