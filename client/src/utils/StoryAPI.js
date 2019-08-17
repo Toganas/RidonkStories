@@ -1,18 +1,18 @@
-import axios from "axios" ;
+import axios from "axios";
 
 export default {
 
-    saveStory: function() {
-        return axios.post("/api/stories");
+    saveStory: function () {
+        return axios.post("/api/story");
     },
 
-    getStory: function(id) {
-        return axios.get("/api/stories/");
-        
+    getStory: function (id) {
+        return axios.get("/api/story/");
+
     },
 
-    deleteStory: function(id) {
-        return axios.delete("/api/books/" +id);
-    }
+    // deleteStory: function(id) {
+    //     return axios.delete("/api/books/" +id);
+    // }
 
 };
