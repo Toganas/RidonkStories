@@ -1,15 +1,15 @@
 const router = require("express").Router();
 const storyController = require("../../controllers/storyController")
 
-
+// /api/story
 router.route("/")
     .get(storyController.create)
     .post(storyController.findAll);
 
 router.route("/:id")
     .get(storyController.remove);
-    
-    
+
+
 module.exports = router;
 
 // const mongoose = require("mongoose");
