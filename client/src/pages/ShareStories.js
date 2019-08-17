@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Form, Col, Button } from 'react-bootstrap';
+import { Form, Row, Button } from 'react-bootstrap';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import "./ShareStories.css"
@@ -52,25 +52,25 @@ class ShareStories extends Component {
   render() {
     
     return (
-      <div>
-        <div className="row storyForm">
-          <div className="col-md-12 formtowrite">
+      
+        <div className="Row storyForm">
+          <div className="Col-md-12 formtowrite">
             <Form>
-              <Form.Group controlId="exampleForm.ControlInput1">
-                <Form.Label class="formText">Title:</Form.Label>
+              <Form.Group as={Row} controlId="exampleForm.ControlInput1">
+                <Form.Label class="formText">Title</Form.Label>
                 <Form.Control size="lg" type="title" 
                 name="title"
                 onChange={this.handleInputChange}
                 />
               </Form.Group>
-              <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label class="formText">Story:</Form.Label>
+              <Form.Group as={Row} controlId="exampleForm.ControlTextarea1">
+                <Form.Label class="formText">Story</Form.Label>
                 <Form.Control as="textarea" rows="5"
                  name="story"
                  onChange={this.handleInputChange}
                 />
               </Form.Group>
-              <Form.Group as={Col} controlId="formGridState">
+              <Form.Group as={Row} controlId="formGridState">
                 <Form.Label class="formText">Categories</Form.Label>
                 <Form.Control as="select"
                  name="category"  // not sure if this will do anything
@@ -99,7 +99,7 @@ class ShareStories extends Component {
             </Form>
           </div>
         </div>
-      </div>
+      
     );
   };
 };

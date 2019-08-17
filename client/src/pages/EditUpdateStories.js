@@ -55,7 +55,7 @@ class EditUpdateStories extends Component {
 
             <Form>
               <Form.Group as={Row} controlId="exampleForm.ControlInput1">
-                <Form.Label class="formText">Title:</Form.Label>
+                <Form.Label class="formText">Title</Form.Label>
 
                 <Form.Control size="lg" type="title" 
                 name={this.state.title}
@@ -66,7 +66,7 @@ class EditUpdateStories extends Component {
 
 
               <Form.Group as={Row} controlId="exampleForm.ControlTextarea1">
-                <Form.Label class="formText">Story:</Form.Label>
+                <Form.Label class="formText">Story</Form.Label>
                 <Form.Control as="textarea" rows="5"
                  name={this.state.story}
                  onChange={this.handleInputChange}
