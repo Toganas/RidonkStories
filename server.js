@@ -1,23 +1,22 @@
+//DEPENDENCIES
 const express = require("express");
-
 const mongoose = require("mongoose");
-const routes = require("./routes/index");
-// auth
-const bodyParser = require("body-parser");
 const passport = require("passport");
+const routes = require("./routes/index");
+const db = require("./config/keys").mongoURI;
 
-const users = require("./routes/api/users");
-
+//START EXPRESS
 const app = express();
 
-// Define middleware here
+//PORT
+const PORT = process.env.PORT || 3001;
+
+// MIDDLEWARE
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// DB Config auth
-const db = require("./config/keys").mongoURI;
 
-// Connect to MongoDB
+// MOONGOOSE
 mongoose
   .connect(
     db,
@@ -26,34 +25,21 @@ mongoose
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
 
-// Passport middleware
+// PASSPORT
 app.use(passport.initialize());
-
-// Passport config
 require("./config/passport")(passport);
 
-// Serve up static assets (usually on heroku)
+//HEROKU
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-// Add routes, both API and view
-// Routes
+
+//ROUTES
 app.use(routes);
 
-const PORT = process.env.PORT || 3002;
-// Local Database
-// Connect to the Mongo DB
-// mongoose.connect(
 
-// "mongodb://localhost/gravesholdInn"
-
-
-// );
-
-// Start the API server
+// START SERVER WITH PORT
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
 
-
-// mongodb+srv://Deepali:<Jaimatadi1>@cluster0-qrqyf.mongodb.net/test?retryWrites=true&w=majority
