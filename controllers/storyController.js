@@ -1,25 +1,23 @@
-const db = require("../models/Story");
+const Story = require("../models/Story");
 
 module.exports = {
     findAll: function(req, res) {
-        db.Book
-          .find(req.query)
-          .sort({ date: -1 })
+      Story
+          .find({})
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
       },
-
     create: function(req, res) {
-        db.Story 
+        Story 
         .create(req.body)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
-
     remove: function(req,res) {
-        db.Story
+        Story
         .findById({_id: req.params.id})
         .then(dbModel => dbModel.remove())
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
-    }}
+    }
+}
