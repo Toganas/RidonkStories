@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import "./ShareStories.css"
 import StoryAPI from "../utils/StoryAPI";
-import { CREATE_STORIES } from '../actions/types';
+// import { CREATE_STORIES } from '../actions/types';
 // ---------------------------------
 // Is this needed?  If we can get this working without it, make sure to delete the file as well
 // import StoryForm from '../components/stories/StoryForm';
@@ -67,7 +67,7 @@ class ShareStories extends Component {
             <Form.Group as={Row} controlId="exampleForm.ControlInput1">
               <Form.Label className="formText">Title</Form.Label>
               <Form.Control size="lg" type="title"
-                name="title"
+                name={this.state.title}
                 value={this.state.title}
                 onChange={this.handleInputChange}
               />
@@ -75,7 +75,7 @@ class ShareStories extends Component {
             <Form.Group as={Row} controlId="exampleForm.ControlTextarea1">
               <Form.Label className="formText">Story</Form.Label>
               <Form.Control as="textarea" rows="5"
-                name="story"
+                name={this.state.story}
                 value={this.state.story}
                 onChange={this.handleInputChange}
               />
@@ -83,7 +83,7 @@ class ShareStories extends Component {
             <Form.Group as={Row} controlId="formGridState">
               <Form.Label className="formText">Categories</Form.Label>
               <Form.Control as="select"
-                name="category"  // not sure if this will do anything
+                name={this.state.category}  // not sure if this will do anything
                 value={this.state.category}
                 onChange={this.handleInputChange}
               >
@@ -120,5 +120,7 @@ ShareStories.propTypes = {
 const mapStateToProps = state => ({
   auth: state.auth
 });
-export default connect(mapStateToProps, { CREATE_STORIES })(ShareStories);
+export default connect(mapStateToProps,
+  // { CREATE_STORIES }
+)(ShareStories);
 
