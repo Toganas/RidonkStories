@@ -2,19 +2,10 @@ const mongoose = require("mongoose");
 
 
 const StorySchema = new mongoose.Schema({
-<<<<<<< HEAD
     userId: {
         type: String,
         required: true
     },
-=======
-
-
-userId: {
-    type: String,
-    required: true
-},
->>>>>>> cfbb1d01154e64c75747e83737943895e0daad58
     title: {
         type: String,
         required: true
