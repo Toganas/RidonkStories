@@ -4,6 +4,14 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import "./ShareStories.css"
 import StoryAPI from "../utils/StoryAPI";
+//____________________________
+import React from 'react';
+import { connect } from 'react-redux';
+import { createStream } from '../../actions';
+import StreamForm from './StreamForm';
+//----------------------------------
+
+
 class ShareStories extends Component {
   //const { user } = this.props.auth;
   state = {
@@ -114,3 +122,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 export default connect(mapStateToProps)(ShareStories);
+

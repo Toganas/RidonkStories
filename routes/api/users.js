@@ -15,6 +15,8 @@ const User = require("../../models/User");
 // @route POST api/users/register
 // @desc Register user
 // @access Public
+
+//'/api/users/register'
 router.post("/register", (req, res) => {
     // Form validation
 
@@ -53,6 +55,7 @@ router.post("/register", (req, res) => {
 // @route POST api/users/login
 // @desc Login user and return JWT token
 // @access Public
+//'/api/users/login'
 router.post("/login", (req, res) => {
     // Form validation
 
