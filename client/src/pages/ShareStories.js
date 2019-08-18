@@ -149,8 +149,7 @@ class ShareStories extends Component {
               onClick={this.handleFormSubmit}
             >
               Submit
-  </Button>
-            <br />
+            </Button>
             <div className="fail">
               {this.state.msg}
             </div>
