@@ -16,7 +16,9 @@ class ShareStories extends Component {
   state = {
     userId: "",
     title: "",
+    titlemsg: "",
     story: "",
+    storymsg: "",
     category: "",
     msg: ""
   };
@@ -44,25 +46,36 @@ class ShareStories extends Component {
   };
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log(this.state)
     if (this.state.userId === undefined) {
       this.setState({
         msg: "You must be logged in order to post a story."
       })
-    } else
-      if (this.state.title && this.state.story && this.state.category) {
-        StoryAPI.saveStory({
-          userId: this.state.user,
-          title: this.state.title,
-          story: this.state.story,
-          category: this.state.category
+    } else if (this.state.title && this.state.story && this.state.category) {
+      StoryAPI.saveStory({
+        userId: this.state.user,
+        title: this.state.title,
+        story: this.state.story,
+        category: this.state.category
+      })
+        .then(this.setState({
+          msg: "Story submitted.",
+          storymsg: "",
+          titlemsg: ""
         })
-          .then(this.setState({
-            msg: "Story submitted."
-          })
-          )
-          .catch(err => console.log(err));
-      }
+        )
+        .catch(err => console.log(err));
+    } else if (this.state.title === "") {
+      this.setState({
+        titlemsg: "Please add a title in order to submit your story.",
+        msg: ""
+      })
+    } else if (this.state.story === "") {
+      this.setState({
+        titlemsg: "",
+        msg: "",
+        storymsg: "Please add a story in order to submit your story."
+      })
+    }
 
 
   };
@@ -81,6 +94,9 @@ class ShareStories extends Component {
                 name="title"
                 onChange={this.handleInputChange}
               />
+              <div>
+                {this.state.titlemsg}
+              </div>
 
             </Form.Group>
 
@@ -91,6 +107,9 @@ class ShareStories extends Component {
                 name="story"
                 onChange={this.handleInputChange}
               />
+              <div>
+                {this.state.storymsg}
+              </div>
             </Form.Group>
 
             <Form.Group as={Row} controlId="formGridState">
@@ -100,7 +119,7 @@ class ShareStories extends Component {
                 value={this.state.category}
                 onChange={this.handleInputChange}
               >
-                <option>Choose...</option>
+                <option name="Other">Other</option>
                 <option name="Animal">Animal</option>
                 <option name="Baby/Kids">Baby/Kids</option>
                 <option name="Driving">Driving</option>
@@ -112,8 +131,9 @@ class ShareStories extends Component {
                 <option name="Coding">Coding</option>
                 <option name="Vacation">Vacation</option>
                 <option name="In-Laws">In-Laws</option>
-                <option name="Other">Other</option>
+
               </Form.Control>
+
             </Form.Group>
             <Button variant="primary" type="submit"
               onClick={this.handleFormSubmit}
