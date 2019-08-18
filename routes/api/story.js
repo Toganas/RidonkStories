@@ -3,8 +3,8 @@ const storyController = require("../../controllers/storyController")
 
 // /api/story
 router.route("/")
-    .get(storyController.create)
-    .post(storyController.findAll);
+    .get(storyController.findAll)
+    .post(storyController.create);
 
 router.route("/:id")
     .get(storyController.remove);
