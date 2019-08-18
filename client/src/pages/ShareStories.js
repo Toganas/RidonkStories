@@ -16,11 +16,11 @@ class ShareStories extends Component {
   state = {
     userId: "",
     title: "",
-    titlemsg: "",
+    titlemsg: " ",
     story: "",
-    storymsg: "",
+    storymsg: " ",
     category: "",
-    msg: ""
+    msg: " "
   };
   componentDidMount = () => {
     const { user } = this.props.auth;
@@ -59,20 +59,28 @@ class ShareStories extends Component {
       })
         .then(this.setState({
           msg: "Story submitted.",
-          storymsg: "",
-          titlemsg: ""
+          storymsg: " ",
+          titlemsg: " "
         })
         )
         .catch(err => console.log(err));
-    } else if (this.state.title === "") {
+    } else if (this.state.title === "" && this.state.story === "") {
       this.setState({
         titlemsg: "Please add a title in order to submit your story.",
-        msg: ""
+        storymsg: "Please add a story in order to submit your story.",
+        msg: " "
+      })
+    }
+    else if (this.state.title === "") {
+      this.setState({
+        titlemsg: "Please add a title in order to submit your story.",
+        msg: " ",
+        storymsg: " "
       })
     } else if (this.state.story === "") {
       this.setState({
-        titlemsg: "",
-        msg: "",
+        titlemsg: " ",
+        msg: " ",
         storymsg: "Please add a story in order to submit your story."
       })
     }
@@ -94,7 +102,7 @@ class ShareStories extends Component {
                 name="title"
                 onChange={this.handleInputChange}
               />
-              <div>
+              <div className="fail">
                 {this.state.titlemsg}
               </div>
 
@@ -107,7 +115,7 @@ class ShareStories extends Component {
                 name="story"
                 onChange={this.handleInputChange}
               />
-              <div>
+              <div className="fail">
                 {this.state.storymsg}
               </div>
             </Form.Group>
@@ -135,13 +143,15 @@ class ShareStories extends Component {
               </Form.Control>
 
             </Form.Group>
-            <Button variant="primary" type="submit"
+            <Button variant="primary"
+              type="submit"
+              id="subbtn"
               onClick={this.handleFormSubmit}
             >
               Submit
   </Button>
             <br />
-            <div>
+            <div className="fail">
               {this.state.msg}
             </div>
           </Form>
