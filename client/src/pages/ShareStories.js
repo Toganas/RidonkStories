@@ -17,7 +17,8 @@ class ShareStories extends Component {
     userId: "",
     title: "",
     story: "",
-    category: ""
+    category: "",
+    msg: ""
   };
   componentDidMount = () => {
     const { user } = this.props.auth;
@@ -44,16 +45,24 @@ class ShareStories extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     console.log(this.state)
-    if (this.state.title && this.state.story && this.state.category) {
-      StoryAPI.saveStory({
-        userId: this.state.user,
-        title: this.state.title,
-        story: this.state.story,
-        category: this.state.category
+    if (this.state.userId === undefined) {
+      this.setState({
+        msg: "You must be logged in order to post a story."
       })
-        .then(res => this.loadStories())
-        .catch(err => console.log(err));
-    }
+    } else
+      if (this.state.title && this.state.story && this.state.category) {
+        StoryAPI.saveStory({
+          userId: this.state.user,
+          title: this.state.title,
+          story: this.state.story,
+          category: this.state.category
+        })
+          .then(this.setState({
+            msg: "Story submitted."
+          })
+          )
+          .catch(err => console.log(err));
+      }
 
 
   };
@@ -111,6 +120,10 @@ class ShareStories extends Component {
             >
               Submit
   </Button>
+            <br />
+            <div>
+              {this.state.msg}
+            </div>
           </Form>
         </div>
       </div>
