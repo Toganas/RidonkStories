@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import { Form, Row, Button } from 'react-bootstrap';
 import "./EditUpdateStories.css"
 import StoryAPI from "../utils/StoryAPI";
@@ -46,7 +46,7 @@ class EditUpdateStories extends Component {
 
   render() {
     return (
-      
+
       <div>
 
         <div className="Row storyForm">
@@ -55,29 +55,29 @@ class EditUpdateStories extends Component {
 
             <Form>
               <Form.Group as={Row} controlId="exampleForm.ControlInput1">
-                <Form.Label class="formText">Title</Form.Label>
+                <Form.Label className="formText">Title</Form.Label>
 
-                <Form.Control size="lg" type="title" 
-                name={this.state.title}
-                onChange={this.handleInputChange}
+                <Form.Control size="lg" type="title"
+                  name={this.state.title}
+                  onChange={this.handleInputChange}
                 />
 
               </Form.Group>
 
 
               <Form.Group as={Row} controlId="exampleForm.ControlTextarea1">
-                <Form.Label class="formText">Story</Form.Label>
+                <Form.Label className="formText">Story</Form.Label>
                 <Form.Control as="textarea" rows="5"
-                 name={this.state.story}
-                 onChange={this.handleInputChange}
+                  name={this.state.story}
+                  onChange={this.handleInputChange}
                 />
               </Form.Group>
 
               <Form.Group as={Row} controlId="formGridState">
-                <Form.Label class="formText">Categories</Form.Label>
+                <Form.Label className="formText">Categories</Form.Label>
                 <Form.Control as="select"
-                 name={this.state.category}  // not sure if this will do anything
-                 onChange={this.handleInputChange}
+                  name={this.state.category}  // not sure if this will do anything
+                  onChange={this.handleInputChange}
                 >
                   <option>Choose...</option>
                   <option name="Animal">Animal</option>
@@ -96,7 +96,7 @@ class EditUpdateStories extends Component {
               </Form.Group>
 
               <Button variant="primary" type="submit"
-              onSubmit={this.handleFormSubmit}
+                onSubmit={this.handleFormSubmit}
               >
                 Submit
   </Button>
@@ -105,7 +105,7 @@ class EditUpdateStories extends Component {
         </div>
 
       </div>
-             
+
     );
   };
 

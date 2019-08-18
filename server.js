@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-// MOONGOOSE
+// MONGOOSE
 mongoose
   .connect(
     db,

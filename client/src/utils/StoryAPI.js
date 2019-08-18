@@ -1,15 +1,15 @@
-// import axios from "axios" ;
+import axios from "axios";
 
-// export default {
-//     saveStory: function(storyData) {
-//         return axios.post("/api/story/", storyData);
-//     },
+export default {
+    saveStory: function (storyData) {
+        return axios.post("/api/story/", storyData);
+    },
 
-//     getStory: function() {
-//         return axios.get("/api/story/");
-//     },
+    getStory: function () {
+        return axios.get("/api/story/");
+    },
 
-//     deleteStory: function(id) {
-//         return axios.delete("/api/books/" + id);
-//     }
-// };
+    deleteStory: function (id) {
+        return axios.delete("/api/books/" + id);
+    }
+};
