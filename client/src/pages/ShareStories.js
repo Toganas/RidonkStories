@@ -4,15 +4,17 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import "./ShareStories.css"
 import StoryAPI from "../utils/StoryAPI";
-// import { createStory } from '../../actions';
-// import StoryForm from './StoryForm';
+import { CREATE_STORIES } from '../actions/types';
+// ---------------------------------
+// Is this needed?  If we can get this working without it, make sure to delete the file as well
+// import StoryForm from '../components/stories/StoryForm';
 //----------------------------------
 
 
 class ShareStories extends Component {
   //const { user } = this.props.auth;
   state = {
-    user: "",
+    userId: "",
     title: "",
     story: "",
     category: ""
@@ -20,7 +22,7 @@ class ShareStories extends Component {
   componentDidMount = () => {
     const { user } = this.props.auth;
     this.setState({
-      user: user.id
+      userId: user.id
     })
 
   }
@@ -28,7 +30,7 @@ class ShareStories extends Component {
 
     StoryAPI.getStory()
       .then(res =>
-        this.setState({ user: "", title: "", stories: res.data, category: "" })
+        this.setState({ userId: "", title: "", stories: res.data, category: "" })
       )
       .catch(err => console.log(err));
   };
@@ -44,7 +46,7 @@ class ShareStories extends Component {
     console.log(this.state)
     if (this.state.title && this.state.story && this.state.category) {
       StoryAPI.saveStory({
-        user: this.state.user,
+        userId: this.state.user,
         title: this.state.title,
         story: this.state.story,
         category: this.state.category
@@ -118,5 +120,5 @@ ShareStories.propTypes = {
 const mapStateToProps = state => ({
   auth: state.auth
 });
-export default connect(mapStateToProps)(ShareStories);
+export default connect(mapStateToProps, { CREATE_STORIES })(ShareStories);
 
