@@ -30,7 +30,7 @@ class ShareStories extends Component {
 
     StoryAPI.getStory()
       .then(res =>
-        this.setState({ userId: "", title: "", stories: res.data, category: "" })
+        this.setState({ userId: "", title: "", story: res.data, category: "" })
       )
       .catch(err => console.log(err));
   };
@@ -61,29 +61,33 @@ class ShareStories extends Component {
 
     return (
 
+
       <div className="Row storyForm">
         <div className="Col-md-12 formtowrite">
           <Form>
             <Form.Group as={Row} controlId="exampleForm.ControlInput1">
               <Form.Label className="formText">Title</Form.Label>
+
               <Form.Control size="lg" type="title"
-                name={this.state.title}
-                value={this.state.title}
+                name="title"
                 onChange={this.handleInputChange}
               />
+
             </Form.Group>
+
+
             <Form.Group as={Row} controlId="exampleForm.ControlTextarea1">
               <Form.Label className="formText">Story</Form.Label>
               <Form.Control as="textarea" rows="5"
-                name={this.state.story}
-                value={this.state.story}
+                name="story"
                 onChange={this.handleInputChange}
               />
             </Form.Group>
+
             <Form.Group as={Row} controlId="formGridState">
               <Form.Label className="formText">Categories</Form.Label>
               <Form.Control as="select"
-                name={this.state.category}  // not sure if this will do anything
+                name="category"  // not sure if this will do anything
                 value={this.state.category}
                 onChange={this.handleInputChange}
               >
