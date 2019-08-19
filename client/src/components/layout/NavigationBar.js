@@ -57,16 +57,20 @@ class NavigationBar extends Component {
                         <Nav.Link href="/ViewStories">View Stories</Nav.Link>
 
                         <NavDropdown title="Categories" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Animals</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Work</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Pregnancy</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Kids</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Driving</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Education</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Sports</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.01">Animals</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.02">Baby/Kids</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.03">Coding</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.04">Drinking</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.05">Driving</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.06">Education</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.07">In-Laws</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.08">Pregnancy</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.09">Sports</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.10">Vacation</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.11">Word</NavDropdown.Item>
 
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Others</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.00">Others</NavDropdown.Item>
                         </NavDropdown>
 
                     </Nav>
