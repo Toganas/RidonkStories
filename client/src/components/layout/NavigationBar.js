@@ -57,20 +57,20 @@ class NavigationBar extends Component {
                         <Nav.Link href="/ViewStories">View Stories</Nav.Link>
 
                         <NavDropdown title="Categories" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.01">Animals</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.02">Baby/Kids</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.03">Coding</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.04">Drinking</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.05">Driving</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.06">Education</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.07">In-Laws</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.08">Pregnancy</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.09">Sports</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.10">Vacation</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.11">Word</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Animals">Animals</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Children">Children</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Coding">Coding</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Drinking">Drinking</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Driving">Driving</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Education">Education</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/In-Laws">In-Laws</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Pregnancy">Pregnancy</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Sports">Sports</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Vacation">Vacation</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Work">Work</NavDropdown.Item>
 
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.00">Others</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Other">Other</NavDropdown.Item>
                         </NavDropdown>
 
                     </Nav>
