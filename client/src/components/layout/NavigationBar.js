@@ -21,6 +21,24 @@ const Styles = styled.div`
 
 class NavigationBar extends Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            category: []
+        }
+
+    }
+
+    componentDidMount() {
+        fetch("/api/story").then(res => res.json()).then(data => {
+            data.forEach(ele => {
+                if (this.state.category.indexOf(ele.category) === -1 && ele.category !== "Other") {
+                    return this.setState({ category: [...this.state.category, ele.category] })
+                }
+            })
+        })
+        console.log(this.state.category)
+    }
 
 
 
@@ -44,12 +62,7 @@ class NavigationBar extends Component {
                     
                    
                     <h1 className="font-weight-bold">RIDONK STORIES</h1>
-                   
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
 
-                    </Navbar.Collapse>
-                   
                 </Navbar>
                 
                 <Navbar bg="light" variant="dark">
@@ -65,17 +78,11 @@ class NavigationBar extends Component {
                         <Nav.Link href="/ViewStories">View Stories</Nav.Link>
 
                         <NavDropdown title="Categories" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/ViewStories/Animals">Animals</NavDropdown.Item>
-                            <NavDropdown.Item href="/ViewStories/Children">Children</NavDropdown.Item>
-                            <NavDropdown.Item href="/ViewStories/Coding">Coding</NavDropdown.Item>
-                            <NavDropdown.Item href="/ViewStories/Drinking">Drinking</NavDropdown.Item>
-                            <NavDropdown.Item href="/ViewStories/Driving">Driving</NavDropdown.Item>
-                            <NavDropdown.Item href="/ViewStories/Education">Education</NavDropdown.Item>
-                            <NavDropdown.Item href="/ViewStories/In-Laws">In-Laws</NavDropdown.Item>
-                            <NavDropdown.Item href="/ViewStories/Pregnancy">Pregnancy</NavDropdown.Item>
-                            <NavDropdown.Item href="/ViewStories/Sports">Sports</NavDropdown.Item>
-                            <NavDropdown.Item href="/ViewStories/Vacation">Vacation</NavDropdown.Item>
-                            <NavDropdown.Item href="/ViewStories/Work">Work</NavDropdown.Item>
+                            {this.state.category.map(ele => {
+                                console.log(ele);
+                                var link = "/ViewStories/" + ele;
+                                return <NavDropdown.Item href={link}>{ele}</NavDropdown.Item>
+                            })}
 
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="/ViewStories/Other">Other</NavDropdown.Item>

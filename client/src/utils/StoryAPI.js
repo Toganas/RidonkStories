@@ -11,5 +11,9 @@ export default {
 
     deleteStory: function (id) {
         return axios.delete("/api/books/" + id);
+    },
+
+    getCategory: function (cat) {
+        return axios.get("/api/story/" + cat);
     }
 };

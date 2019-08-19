@@ -24,7 +24,16 @@ module.exports = {
     findCat: function (req, res) {
         Story
             .find({ category: req.params.cat })
+            .sort({ date: -1 })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
+    },
+    findOne: function (req, res) {
+        Story
+            .find({})
+            .sort({ date: -1 })
+            .then(dbModel => res.json(dbModel[0]))
+            .catch(err => res.status(422).json(err));
+
     }
 }

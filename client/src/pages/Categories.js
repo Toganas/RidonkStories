@@ -15,14 +15,26 @@ class Categories extends Component {
   };
 
   componentDidMount() {
-    this.loadStories();
+    const { cat } = this.props.match.params
+    this.loadStories(cat);
+    console.log(cat);
+    console.log("some words");
   }
 
-  loadStories = () => {
-    StoryAPI.getStory()
-      .then(res =>
-        this.setState({ stories: res.data, title: "", story: "" })
-      ).catch(err => console.log(err));
+  loadStories = cat => {
+    fetch("/api/story/category/" + cat).then(res => res.json()).then(data => {
+      data.map(ele => {
+        return this.setState({ stories: [...this.state.stories, ele] })
+      })
+    })
+
+    // this.setState((prevState, props) => {
+    //   return { counter: prevState.counter + props.step };
+    // })
+    // StoryAPI.getCategory(cat)
+    //   .then(res =>
+    //     this.setState({ stories: res.data, title: "", story: "" })
+    //   ).catch(err => console.log(err));
 
   };
 

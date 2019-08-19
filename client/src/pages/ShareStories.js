@@ -45,7 +45,7 @@ class ShareStories extends Component {
     // If no user is logged in.
     if (this.state.userId === undefined) {
       this.setState({
-        msg: "You must be logged in order to post a story."
+        msg: "Sorry, you must be logged in to post a story."
       })
       // User is logged in and has input something for the title and story.  Category is defaulted to something
     } else if (this.state.title && this.state.story && this.state.category) {
