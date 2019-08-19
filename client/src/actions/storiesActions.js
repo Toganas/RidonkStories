@@ -18,7 +18,12 @@ export const fetchStories = () => {
     }
 };
 
-
+export const findByCat = cat => {
+    return async dispatch => {
+        const response = await axios.get(`api/story/${cat}`);
+        dispatch({ type: FIND_BY_CAT, payload: response })
+    }
+}
 
 export const deleteStories = id => {
     return async dispatch => {
