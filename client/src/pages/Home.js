@@ -28,6 +28,7 @@ function Home() {
   const [title, setTitle] = useState("")
   const [content, setContent] = useState("")
 
+
   const handleClose = () => setShow(false);
   const handleShow = () => {
     fetch("/api/story/top").then(res => res.json()).then(data => {
@@ -67,6 +68,7 @@ function Home() {
             <ModalExample show={show} handleClose={handleClose} title={title} content={content} />
             {/* <Modal /> */}
 
+
           </div>
 
           <div className="col-md-6 allTimeFav">
@@ -80,9 +82,11 @@ function Home() {
           </div>
         </div>
 
-      </div>
+
+      </div> 
 
 
+    
 
     </React.Fragment>
   )
