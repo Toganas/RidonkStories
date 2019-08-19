@@ -76,7 +76,7 @@ const Home = () {
 
             <p>List of all time fav stories...again connect to backend to show few stories here...</p>
 
-            <Modal />
+
           </div>
         </div>
 
