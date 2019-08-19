@@ -1,6 +1,6 @@
-import React { useState } from "react";
+import React, { useState } from "react";
 import { Jumbotron, Container, Breadcrumb, BreadcrumbItem, Button } from 'react-bootstrap';
-import Modal from '../components/StoryModal/StoryModal';
+import ModalExample from '../components/StoryModal/StoryModal';
 
 import "./Home.css";
 
@@ -23,7 +23,7 @@ import "./Home.css";
 // };
 //--------------------------------------
 
-const Home = () {
+function Home() {
   const [show, setShow] = useState(false);
   const [title, setTitle] = useState("")
   const [content, setContent] = useState("")
@@ -64,7 +64,7 @@ const Home = () {
             <p>probably do the state.this.today's story deal here..connect to backend</p>
 
             <ModalExample show={show} handleClose={handleClose} title={title} content={content} />
-            <Modal />
+            {/* <Modal /> */}
 
           </div>
 
