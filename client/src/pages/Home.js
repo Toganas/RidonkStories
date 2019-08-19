@@ -61,8 +61,6 @@ function Home() {
               Launch demo modal
             </Button>
 
-            <p>probably do the state.this.today's story deal here..connect to backend</p>
-
             <ModalExample show={show} handleClose={handleClose} title={title} content={content} />
             {/* <Modal /> */}
 
@@ -74,7 +72,6 @@ function Home() {
 
             </Breadcrumb>
 
-            <p>List of all time fav stories...again connect to backend to show few stories here...</p>
 
 
           </div>
