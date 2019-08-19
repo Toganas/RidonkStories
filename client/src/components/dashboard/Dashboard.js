@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-import {Breadcrumb, BreadcrumbItem } from 'react-bootstrap';
+import { Breadcrumb, BreadcrumbItem } from 'react-bootstrap';
 class Dashboard extends Component {
     onLogoutClick = e => {
         e.preventDefault();
@@ -18,34 +18,30 @@ class Dashboard extends Component {
                             <b>Hey there,</b> {user.name.split(" ")[0]}
 
                         </h4>
-                        <h5> 
-                            <b>your id is</b> {user.id}
-                        </h5>
+
 
                         <div className="row Two">
-        <div className="col-md-6 today">
-          <Breadcrumb tag="nav" listtag="div">
-            <BreadcrumbItem tag="a" href="/StoriesOfTheDay"><h3>Stories of the Day</h3></BreadcrumbItem>
+                            <div className="col-md-6 today">
+                                <Breadcrumb tag="nav" listtag="div">
+                                    <BreadcrumbItem tag="a" href="/StoriesOfTheDay"><h3>Stories of the Day</h3></BreadcrumbItem>
 
-          </Breadcrumb>
+                                </Breadcrumb>
 
-          <p>probably do the state.this.today's story deal here..connect to backend</p>
-          {/* <button onClick={testRoute}>click me</button> */}
-          
+                                {/* <button onClick={testRoute}>click me</button> */}
 
-        </div>
 
-        <div className="col-md-6 allTimeFav">
-          <Breadcrumb tag="nav" listtag="div">
-            <BreadcrumbItem tag="a" href="/StoriesOfTheDay"> <h3>Fav Stories</h3></BreadcrumbItem>
+                            </div>
 
-          </Breadcrumb>
+                            <div className="col-md-6 allTimeFav">
+                                <Breadcrumb tag="nav" listtag="div">
+                                    <BreadcrumbItem tag="a" href="/StoriesOfTheDay"> <h3>Fav Stories</h3></BreadcrumbItem>
 
-          <p>List of all time fav stories...again connect to backend to show few stories here...</p>
+                                </Breadcrumb>
 
-          
-        </div>
-      </div>
+
+
+                            </div>
+                        </div>
 
 
 
