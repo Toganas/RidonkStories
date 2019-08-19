@@ -16,7 +16,7 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import Home from "./pages/Home";
 import { AllTimeFav } from "./pages/AllTimeFav";
-import EditUpdateStories from "./pages/EditUpdateStories";
+// import ViewStories from "./pages/StoriesOfTheDay";
 import ShareStories from "./pages/ShareStories";
 import StoriesOfTheDay from "./pages/StoriesOfTheDay";
 
