@@ -21,7 +21,7 @@ class NavigationBar extends Component {
 
 
 
-    
+
     render() {
         return (
             <Styles>
@@ -54,7 +54,7 @@ class NavigationBar extends Component {
   }     This is to spread out the links...do this code in css*/}
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/ShareStories">Share Stories</Nav.Link>
-                        <Nav.Link href="/EditUpdateStories">Edit/Update Stories</Nav.Link>
+                        <Nav.Link href="/ViewStories">View Stories</Nav.Link>
 
                         <NavDropdown title="Categories" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Animals</NavDropdown.Item>
