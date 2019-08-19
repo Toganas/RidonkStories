@@ -38,10 +38,7 @@ class NavigationBar extends Component {
 
                     <h1 className="font-weight-bold">RIDONK STORIES</h1>
 
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
 
-                    </Navbar.Collapse>
                 </Navbar>
 
                 <Navbar bg="danger" variant="dark">
