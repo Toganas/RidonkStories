@@ -26,8 +26,8 @@ import "./Home.css";
 const Home = () => (
   <React.Fragment>
 
-
-    <div className="row One">
+   
+    <div className="row One bg-info">
       <Jumbotron fluid>
         <Container>
           <h1>About</h1>
@@ -38,14 +38,14 @@ const Home = () => (
 
       <br>
       </br>
-
+      
       <div className="row Two">
         <div className="col-md-6 today">
           <Breadcrumb tag="nav" listtag="div">
             <BreadcrumbItem tag="a" href="/StoriesOfTheDay"><h3>Stories of the Day</h3></BreadcrumbItem>
 
           </Breadcrumb>
-
+           
           <p>probably do the state.this.today's story deal here..connect to backend</p>
           {/* <button onClick={testRoute}>click me</button> */}
           <Modal />
@@ -64,9 +64,9 @@ const Home = () => (
         </div>
       </div>
 
-    </div>
+      </div> 
 
-
+    
 
   </React.Fragment>
 )

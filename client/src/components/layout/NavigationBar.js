@@ -6,12 +6,14 @@ import logo from "../../assets/images/logo.png"
 
 const Styles = styled.div`
   .navbar {
-    background-color: #222;
+    background-color: red;
+    padding: 6px 4px 6px 2px;
+    font-size: 20px;
   }
   a, .navbar-brand, .navbar-nav .nav-link {
     color: #bbb;
-    &:hover {
-      color: white;
+     &:hover {
+      color: black;
     }
     
   }
@@ -25,7 +27,10 @@ class NavigationBar extends Component {
     render() {
         return (
             <Styles>
-                <Navbar expand="lg" bg="light text-danger">
+                
+                <Navbar expand="lg" bg="danger text-dark">
+                
+               
                     <Navbar.Brand href="/">
                         <img
                             src={logo}
@@ -34,17 +39,20 @@ class NavigationBar extends Component {
                             className="d-inline-block align-top"
                             alt="logo"
                         />
+                        
                     </Navbar.Brand>
-
+                    
+                   
                     <h1 className="font-weight-bold">RIDONK STORIES</h1>
-
+                   
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
 
                     </Navbar.Collapse>
+                   
                 </Navbar>
-
-                <Navbar bg="danger" variant="dark">
+                
+                <Navbar bg="light" variant="dark">
 
                     <Nav className="mr-auto">
 
