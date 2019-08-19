@@ -30,7 +30,7 @@ module.exports = {
     findOne: function (req, res) {
         Story
             .find({})
-            .sort({ created_at: -1 })
+            .sort({ date: -1 })
             .then(dbModel => res.json(dbModel[0]))
             .catch(err => res.status(422).json(err));
 

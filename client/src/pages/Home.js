@@ -30,9 +30,12 @@ function Home() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => {
-    setTitle("title")
-    setContent("story")
-    setShow(true)
+    fetch("/api/story/top").then(res => res.json()).then(data => {
+      setTitle(data.title)
+      setContent(data.story)
+      setShow(true)
+    })
+
   };
 
   return (
