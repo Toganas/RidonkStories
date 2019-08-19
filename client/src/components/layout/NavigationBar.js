@@ -21,7 +21,7 @@ class NavigationBar extends Component {
 
 
 
-    
+
     render() {
         return (
             <Styles>
@@ -54,19 +54,23 @@ class NavigationBar extends Component {
   }     This is to spread out the links...do this code in css*/}
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/ShareStories">Share Stories</Nav.Link>
-                        <Nav.Link href="/EditUpdateStories">Edit/Update Stories</Nav.Link>
+                        <Nav.Link href="/ViewStories">View Stories</Nav.Link>
 
                         <NavDropdown title="Categories" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Animals</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Work</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Pregnancy</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Kids</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Driving</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Education</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Sports</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Animals">Animals</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Children">Children</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Coding">Coding</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Drinking">Drinking</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Driving">Driving</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Education">Education</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/In-Laws">In-Laws</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Pregnancy">Pregnancy</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Sports">Sports</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Vacation">Vacation</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Work">Work</NavDropdown.Item>
 
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Others</NavDropdown.Item>
+                            <NavDropdown.Item href="/ViewStories/Other">Other</NavDropdown.Item>
                         </NavDropdown>
 
                     </Nav>

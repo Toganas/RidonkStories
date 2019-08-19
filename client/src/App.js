@@ -56,11 +56,11 @@ class App extends Component {
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <Route exact path="/Home" component={Home} />
               <Route exact path="/AllTimeFav" component={AllTimeFav} />
-             
-              <Route exact path="/EditUpdateStories" component={EditUpdateStories} />
+
+              <Route exact path="/ViewStories" component={StoriesOfTheDay} />
               <Route exact path="/ShareStories" component={ShareStories} />
               <Route exact path="/StoriesOfTheDay" component={StoriesOfTheDay} />
-              
+
             </Switch>
           </div>
         </Router>

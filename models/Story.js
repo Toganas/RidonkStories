@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const StorySchema = new mongoose.Schema({
     userId: {
         type: String,
-        required: true
+        // required: true
     },
     title: {
         type: String,
@@ -31,11 +31,9 @@ const StorySchema = new mongoose.Schema({
     //         }
     //     }
     // ],
-    category: [
-        {
-            type: String,
-        }
-    ],
+    category: {
+        type: String
+    },
     date: {
         type: Date,
         default: Date.now
