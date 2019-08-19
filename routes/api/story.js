@@ -8,6 +8,9 @@ router.route("/")
 // api/story/:id
 // Deletes story by id
 router.route("/:id")
-    .get(storyController.remove);
+    .get(storyController.remove)
+
+router.route("/:cat")
+    .get(storyController.findCat);
 
 module.exports = router;
