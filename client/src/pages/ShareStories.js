@@ -129,8 +129,8 @@ class ShareStories extends Component {
               >
                 {/* list of categories, default to Other,  rest alphabetical */}
                 <option name="Other">Other</option>
-                <option name="Animal">Animal</option>
-                <option name="Baby/Kids">Baby/Kids</option>
+                <option name="Animals">Animals</option>
+                <option name="Children">Children</option>
                 <option name="Coding">Coding</option>
                 <option name="Drinking">Drinking</option>
                 <option name="Driving">Driving</option>
