@@ -63,6 +63,7 @@ class ShareStories extends Component {
           titlemsg: " "
         })
         )
+        .then(this.props.history.push("/dashboard"))
         .catch(err => console.log(err));
     } else if (this.state.title === "" && this.state.story === "") {
       this.setState({
@@ -84,6 +85,7 @@ class ShareStories extends Component {
         storymsg: "Please add a story in order to submit your story."
       })
     }
+
 
 
   };
