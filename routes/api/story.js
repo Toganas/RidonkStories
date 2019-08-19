@@ -5,7 +5,7 @@ router.route("/")
     .get(storyController.findAll)
     .post(storyController.create);
 
-// api/story/:id
+// api/story/remove/:id
 // Deletes story by id
 
 // api/story/:cat
@@ -13,8 +13,8 @@ router.route("/")
 router.route("/category/:cat")
     .get(storyController.findCat);
 
+// find a single story
 router.route("/top")
     .get(storyController.findOne);
-
 
 module.exports = router;
