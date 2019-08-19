@@ -23,7 +23,7 @@ module.exports = {
     },
     findCat: function (req, res) {
         Story
-            .findById({ category: req.params.cat })
+            .find({ category: req.params.cat })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     }
