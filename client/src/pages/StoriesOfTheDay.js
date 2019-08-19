@@ -44,6 +44,9 @@ class StoriesOfTheDay extends Component {
                   {str.story}
                 </Card.Text>
 
+                <Card.Footer className="category">
+                  <small>Category: {str.category}</small>
+                </Card.Footer>
 
               </Card.Body>
             </Card>
