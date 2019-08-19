@@ -7,12 +7,14 @@ router.route("/")
 
 // api/story/:id
 // Deletes story by id
-router.route("/remove/:id")
-    .get(storyController.remove)
 
 // api/story/:cat
 // find all stories with category
 router.route("/category/:cat")
     .get(storyController.findCat);
+
+router.route("/top")
+    .get(storyController.findOne);
+
 
 module.exports = router;
