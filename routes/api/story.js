@@ -12,5 +12,7 @@ router.route("/:id")
 
 router.route("/:cat")
     .get(storyController.findCat);
+router.route("/:story")
+    .get(storyController.findOne);
 
 module.exports = router;
