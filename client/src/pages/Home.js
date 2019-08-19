@@ -54,7 +54,7 @@ const Home = () => (
 
         <div className="col-md-6 allTimeFav">
           <Breadcrumb tag="nav" listtag="div">
-            <BreadcrumbItem tag="a" href="/StoriesOfTheDay"> <h3>Fav Stories</h3></BreadcrumbItem>
+            <BreadcrumbItem tag="a" href="/StoriesOfTheDay"> <h3>View Stories</h3></BreadcrumbItem>
 
           </Breadcrumb>
 
