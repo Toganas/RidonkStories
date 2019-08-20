@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Jumbotron, Container, Breadcrumb, BreadcrumbItem } from 'react-bootstrap';
+import { Card, Jumbotron, Container } from 'react-bootstrap';
 import ModalExample from '../components/StoryModal/StoryModal';
 import BackDrop from '../components/backdrop/Backdrop';
 import "./Home.css";
@@ -21,13 +21,6 @@ function Home() {
 
   };
 
-  const fullWidth = {
-    width: '60%'
-  };
-  const center = {
-
-    justifyContent: 'center'
-  }
 
   return (
     <React.Fragment>
@@ -41,7 +34,7 @@ function Home() {
             <Jumbotron fluid>
               <Container>
                 <h1>About</h1>
-                <p>Welcome to Ridonk Stories where you can post funny, gross or weird stories anonymously. Here at Ridonk Stories we believe in making people laugh but none laughed at. We understand the satisfaction of sharing your most ridiculous stories and that sometimes we aren’t able to due to fear of judgement. Well fear no more! Now you can anonymously do so. Simply signup for an account and create your story and post it! The post will only appear with your story.
+                <p className="welcome">Welcome to Ridonk Stories where you can post funny, gross or weird stories anonymously. Here at Ridonk Stories we believe in making people laugh but none laughed at. We understand the satisfaction of sharing your most ridiculous stories and that sometimes we aren’t able to due to fear of judgement. Well fear no more! Now you can anonymously do so. Simply signup for an account and create your story and post it! The post will only appear with your story.
                                   </p>
               </Container>
             </Jumbotron>
@@ -74,7 +67,7 @@ function Home() {
               <Card.Body>
                 <Card.Title>
 
-                <Card.Link href="/ViewStories">View Stories</Card.Link>
+                <Card.Link href="/ViewStories" id="view">View Stories</Card.Link>
                 </Card.Title>
                 
                 
