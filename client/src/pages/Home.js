@@ -1,27 +1,9 @@
 import React, { useState } from "react";
 import { Jumbotron, Container, Button, Card } from 'react-bootstrap';
 import ModalExample from '../components/StoryModal/StoryModal';
-
+import BackDrop from '../components/backdrop/Backdrop';
 import "./Home.css";
 
-
-
-
-//---------------------------------
-// const testRoute = () => {
-//   API.getTest()
-//     .then(res =>
-//       console.log(res)
-//       )
-
-//     // .catch(() =>
-//     //   this.setState({
-//     //     books: [],
-//     //     message: "No New Books Found, Try a Different Query"
-//     //   })
-//     // );
-// };
-//--------------------------------------
 
 function Home() {
   const [show, setShow] = useState(false);
@@ -39,8 +21,19 @@ function Home() {
 
   };
 
+  const fullWidth = {
+    width: '60%'
+  };
+  const center = {
+
+    justifyContent: 'center'
+  }
+
   return (
     <React.Fragment>
+
+      <BackDrop />
+
 
       <div className="Container">
         <div className="row One">
@@ -54,11 +47,21 @@ function Home() {
             </Jumbotron>
           </div>
 
+
         </div>
        
 
-        <div className="row Two">
+        <div className="row Two" style={fullWidth}>
           <div className="col-md-6 today">
+
+            <Breadcrumb tag="nav" listtag="div" onClick={handleShow}>
+              <BreadcrumbItem tag="a" onClick={handleShow}><h3>Story of the Day</h3></BreadcrumbItem>
+
+              {/* <Button style={buttonStyle} variant="primary" onClick={handleShow}>
+                Click
+            </Button> */}
+            </Breadcrumb>
+
 
 
             <Card>
@@ -75,6 +78,7 @@ function Home() {
                     Random Story of the day.
             </Button>
 
+
                   <ModalExample show={show} handleClose={handleClose} title={title} content={content} />
                   {/* <Modal /> */}
 
@@ -87,12 +91,18 @@ function Home() {
 
           </div>
 
+
+          <div className="col-md-6 allTimeFav text-center">
+            <Breadcrumb tag="nav" listtag="div" style={center}>
+              <BreadcrumbItem tag="a" href="/StoriesOfTheDay"><h3>View Stories</h3></BreadcrumbItem>
+
           <div className="col-md-6 allTimeFav">
             <Card>
               <Card.Body className="height"> 
                 <Card.Title>
 
                   <Card.Link href="/StoriesOfTheDay">View More Stories</Card.Link>
+
 
                 </Card.Title>
 
@@ -102,14 +112,21 @@ function Home() {
 
           </div>
         </div>
+      </div>
 
+
+      {/* </div>  */}
+
+
+      {/* </div > */}
 
       </div>
 
 
 
 
-    </React.Fragment>
+
+    </React.Fragment >
   )
 }
 
