@@ -46,8 +46,8 @@ class Register extends Component {
         const { errors } = this.state;
         return (
             <div className="container">
-                <div className="Row">
-                    <div className="Col s8 offset-s2">
+                <div className="Row card bg-ligt mt-5 shadow-lg rounded">
+                    <div className="Col s8 offset-s2 m-4">
                         <Link to="/" className="btn-flat waves-effect">
                             <i className="material-icons left">keyboard_backspace</i> Back to
                             home

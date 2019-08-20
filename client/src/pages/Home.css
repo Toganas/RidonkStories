@@ -6,3 +6,11 @@
 h3 {
   color: #dc3545;
 }
+
+.breadcrumb {
+  justify-content: center;
+}
+
+a:hover {
+  color: #dc3545;
+}

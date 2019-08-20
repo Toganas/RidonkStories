@@ -9,7 +9,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 import NavigationBar from "./components/layout/NavigationBar";
-import Landing from "./components/layout/Landing";
+// import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
@@ -19,6 +19,7 @@ import { AllTimeFav } from "./pages/AllTimeFav";
 // import ViewStories from "./pages/StoriesOfTheDay";
 import ShareStories from "./pages/ShareStories";
 import StoriesOfTheDay from "./pages/StoriesOfTheDay";
+import Categories from "./pages/Categories"
 
 
 import "./App.css";
@@ -60,6 +61,7 @@ class App extends Component {
               <Route exact path="/ViewStories" component={StoriesOfTheDay} />
               <Route exact path="/ShareStories" component={ShareStories} />
               <Route exact path="/StoriesOfTheDay" component={StoriesOfTheDay} />
+              <Route exact path="/ViewStories/:cat" component={Categories} />
 
             </Switch>
           </div>

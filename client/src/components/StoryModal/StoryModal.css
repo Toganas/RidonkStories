@@ -25,4 +25,7 @@
   .content{
     height :auto;
   }
-  
+  .modal-backdrop.show {
+    opacity: .7;
+    height : 100vh;
+  }
