@@ -32,10 +32,10 @@ class NavigationBar extends Component {
         return (
             <div>
 
-                
 
-            
-                
+
+
+
                 <Navbar>
                     <Navbar.Brand href="#home">
                         <img
@@ -50,43 +50,52 @@ class NavigationBar extends Component {
                     </Navbar.Brand>
                 </Navbar>
 
-                <Navbar bg="light text-dark" expand="lg">
-                    
+                <Navbar bg="light text-dark" expand="md">
+
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse bg ="light" id="responsive-navbar-nav">
-                        <Nav className="mr-auto">
-                            <Nav.Link href="/">Home</Nav.Link>
-                            <Nav.Link href="/ShareStories">Share Stories</Nav.Link>
-                            <Nav.Link href="/ViewStories">View Stories</Nav.Link>
-                            <NavDropdown title="Categories" id="basic-nav-dropdown">
-                            {this.state.category.map(ele => {
-                                
-                                var link = "/ViewStories/" + ele;
-                                return <NavDropdown.Item href={link}>{ele}</NavDropdown.Item>
-                            })}
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <div className="menuFlex">
+                            <div>
+                                <Nav className="mr-auto z-index">
+                                    <Nav.Link href="/">Home</Nav.Link>
+                                    <Nav.Link href="/ShareStories">Share Stories</Nav.Link>
+                                    <Nav.Link href="/ViewStories">View Stories</Nav.Link>
+                                    <NavDropdown title="Categories" id="basic-nav-dropdown">
+                                        {this.state.category.map(ele => {
 
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="/ViewStories/Other">Other</NavDropdown.Item>
-                        </NavDropdown>
+                                            var link = "/ViewStories/" + ele;
 
-                        <Nav className="leftFloat">
-                                <Nav.Item>
-                                    <Nav.Link href="/login">Log In</Nav.Link>
+                                            return <NavDropdown.Item href={link} key={ele}>{ele}</NavDropdown.Item>
+                                        })}
+
+                                        <NavDropdown.Divider />
+                                        <NavDropdown.Item href="/ViewStories/Other">Other</NavDropdown.Item>
+                                    </NavDropdown>
+                                </Nav>
+
+                            </div>
+                            <div className="text-center">
+                                <Nav className="fullWidth">
+                                    <Nav.Item>
+                                        <Nav.Link href="/login">Log In</Nav.Link>
                                     </Nav.Item>
                                     <Nav.Item>
 
-                                    <Nav.Link href="/register">Sign up</Nav.Link>
+                                        <Nav.Link href="/register">Sign up</Nav.Link>
 
-                                </Nav.Item>
+                                    </Nav.Item>
 
-                        </Nav>
-                            
+                                </Nav>
 
-                        </Nav>
-                        
+
+                            </div>
+                        </div>
+
                     </Navbar.Collapse>
 
-                    
+
+
+
                 </Navbar>
 
                 {/* <Navbar expand="lg" bg="danger text-dark">
@@ -107,7 +116,7 @@ class NavigationBar extends Component {
                     <h1 className="font-weight-bold">RIDONK STORIES</h1>
 
                 </Navbar> */}
-{/* 
+                {/* 
                 <Navbar bg="light" variant="dark">
 
                     <Nav className="mr-auto">
