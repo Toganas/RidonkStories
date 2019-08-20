@@ -29,13 +29,15 @@ mongoose
 app.use(passport.initialize());
 require("./config/passport")(passport);
 
+//ROUTES
+app.use(routes);
+
 //HEROKU
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-//ROUTES
-app.use(routes);
+
 
 
 // START SERVER WITH PORT
