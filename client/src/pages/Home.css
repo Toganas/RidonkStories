@@ -3,7 +3,9 @@
   max-width: 100%;
 }
 
-
+.jumbotron {
+  background-color: #fff;
+}
 
 .breadcrumb {
   justify-content: center;
@@ -14,22 +16,19 @@
 }
 
 .height {
-  height: 110px
+  height: 110px;
 }
 
 .welcome {
   font-size: 20px;
 }
 
-
-#storyBlue  {
-  color:  #f31818;
+#storyBlue {
+  color: #f31818;
 }
 
 #view {
-  color:  #f31818; 
+  color: #f31818;
 }
-@media screen and (max-width:412px) {
-  
+@media screen and (max-width: 412px) {
 }
-
