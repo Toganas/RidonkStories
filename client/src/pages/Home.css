@@ -19,10 +19,13 @@ a:hover {
   height: 110px
 }
 
+
+#storyBlue  {
+  color: #039be5;
+}
+
+
 @media screen and (max-width:412px) {
-
-
- 
   
 }
 
