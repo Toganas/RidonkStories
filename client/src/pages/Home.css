@@ -1,10 +1,10 @@
 .One {
-  margin: 3em;
+  margin-top: 2em;
   max-width: 100%;
 }
 
 h3 {
-  color: #dc3545;
+  color:rgb(184, 54, 54);
 }
 
 .breadcrumb {
@@ -14,3 +14,15 @@ h3 {
 a:hover {
   color: #dc3545;
 }
+
+.height {
+  height: 110px
+}
+
+@media screen and (max-width:412px) {
+
+
+ 
+  
+}
+
