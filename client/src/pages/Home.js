@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Jumbotron, Container, Button, Card, Breadcrumb, BreadcrumbItem } from 'react-bootstrap';
+import { Jumbotron, Container, Breadcrumb, BreadcrumbItem } from 'react-bootstrap';
 import ModalExample from '../components/StoryModal/StoryModal';
 import BackDrop from '../components/backdrop/Backdrop';
 import "./Home.css";
