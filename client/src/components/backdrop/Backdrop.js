@@ -1,5 +1,5 @@
 import React from 'react';
-import "./BackDrop.css"
+import './BackDrop.css';
 
 const BackDrop = prop => <div className="backdrop">
 

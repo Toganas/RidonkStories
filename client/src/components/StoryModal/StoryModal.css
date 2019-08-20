@@ -17,9 +17,12 @@
   }
   .modal {
     position: fixed;
-    margin-top: 40%;
+    margin-top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     height:auto;
+  }
+  .content{
+    height :auto;
   }
   
