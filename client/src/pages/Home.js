@@ -1,27 +1,9 @@
 import React, { useState } from "react";
 import { Jumbotron, Container, Breadcrumb, BreadcrumbItem, Button } from 'react-bootstrap';
 import ModalExample from '../components/StoryModal/StoryModal';
-
+import BackDrop from '../components/backdrop/BackDrop';
 import "./Home.css";
 
-
-
-
-//---------------------------------
-// const testRoute = () => {
-//   API.getTest()
-//     .then(res =>
-//       console.log(res)
-//       )
-
-//     // .catch(() =>
-//     //   this.setState({
-//     //     books: [],
-//     //     message: "No New Books Found, Try a Different Query"
-//     //   })
-//     // );
-// };
-//--------------------------------------
 
 function Home() {
   const [show, setShow] = useState(false);
@@ -40,7 +22,7 @@ function Home() {
 
   return (
     <React.Fragment>
-
+      <BackDrop />
 
       <div className="row One">
         <Jumbotron fluid>
