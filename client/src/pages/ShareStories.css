@@ -1,6 +1,8 @@
 .storyForm {
   background-color: rgb(238, 232, 230);
-  margin: 3em 10em;
+  /* margin: 3em 10em; */
+  /* margin-top: 3em; */
+  margin: 3em auto;
   padding: 4em;
   max-width: 80%;
   box-shadow: 0 20px 28px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -17,4 +19,26 @@
 
 #subbtn {
   margin-bottom: 1em;
+}
+
+@media screen and (max-width: 768px) {
+  .storyForm {
+    padding: 2em;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .storyForm {
+    max-width: 100%;
+    margin: 0;
+    padding: 1em;
+    position: absolute;
+    top: 112px; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: none;
+  };
+ 
+
 }

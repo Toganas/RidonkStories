@@ -111,7 +111,7 @@ class ShareStories extends Component {
             <Form.Group as={Row} controlId="exampleForm.ControlTextarea1">
               <Form.Label className="formText">Story</Form.Label>
               <Form.Control as="textarea" rows="5"
-                name="story"
+                name="story "id="storyBox"
                 onChange={this.handleInputChange}
               />
               <div className="fail">

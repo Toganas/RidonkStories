@@ -15,6 +15,21 @@
   font-size: 40px;
 }
 
+.show {
+  background-color: #fff;
+  z-index: 99;
+}
+
+.menuFlex {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fullWidth {
+  width: 100%
+}
+
 @media screen and (max-width:412px) {
 
 
@@ -22,5 +37,13 @@
     font-size: 28px;
   }
   
+  
 }
 
+@media screen and (max-width:767px) {
+.menuFlex {
+  display: block;
+  width: 100%
+}
+
+}

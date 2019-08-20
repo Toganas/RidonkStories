@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Jumbotron, Container, Breadcrumb, BreadcrumbItem } from 'react-bootstrap';
+import { Card, Jumbotron, Container, Breadcrumb, BreadcrumbItem } from 'react-bootstrap';
 import ModalExample from '../components/StoryModal/StoryModal';
 import BackDrop from '../components/backdrop/Backdrop';
 import "./Home.css";
@@ -51,12 +51,17 @@ function Home() {
         </div>
 
 
-        <div className="row Two" style={fullWidth}>
+        <div className="row Two">
           <div className="col-md-6 today">
 
-            <Breadcrumb tag="nav" listtag="div" onClick={handleShow}>
-              <BreadcrumbItem tag="a" onClick={handleShow}><h3>Story of the Day</h3></BreadcrumbItem>
-            </Breadcrumb>
+            <Card>
+              <Card.Body>
+                <Card.Title>
+
+                  <Card.Link onClick={handleShow} id="storyBlue">Story of the Day</Card.Link>
+                </Card.Title>
+              </Card.Body>
+            </Card>
             <ModalExample show={show} handleClose={handleClose} title={title} content={content} />
 
           </div>
@@ -64,10 +69,19 @@ function Home() {
 
           <div className="col-md-6 allTimeFav text-center">
 
-            <Breadcrumb tag="nav" listtag="div" style={center}>
-              <BreadcrumbItem tag="a" href="/ViewStories"><h3>View Stories</h3></BreadcrumbItem>
-            </Breadcrumb>
 
+            <Card>
+              <Card.Body>
+                <Card.Title>
+
+                <Card.Link href="/ViewStories">View Stories</Card.Link>
+                </Card.Title>
+                
+                
+               
+              </Card.Body>
+            </Card>
+           
             <div className="col-md-6 allTimeFav">
             </div>
           </div>
