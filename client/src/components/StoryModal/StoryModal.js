@@ -11,7 +11,7 @@ function ModalExample(props) {
       <Modal.Header closeButton>
         <Modal.Title>{props.title}</Modal.Title>
       </Modal.Header>
-      <Modal.Body>{props.content}</Modal.Body>
+      <Modal.Body className="content">{props.content}</Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={props.handleClose}>
           Close

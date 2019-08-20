@@ -7,6 +7,14 @@ h3 {
   color:rgb(184, 54, 54);
 }
 
+.breadcrumb {
+  justify-content: center;
+}
+
+a:hover {
+  color: #dc3545;
+}
+
 .height {
   height: 110px
 }
@@ -17,3 +25,4 @@ h3 {
  
   
 }
+
