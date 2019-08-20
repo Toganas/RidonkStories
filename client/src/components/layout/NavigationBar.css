@@ -1,4 +1,26 @@
 .navbar {
-    background-color: #222;
+     background-color: rgb(184, 54, 54);
+     padding: 10px 10px 10px 10px;
+     font-size: 20px;
+   }
+  
+.navbar-brand {
+  font-size: x-large;
+  
+}
+
+.navbar-light .navbar-brand {
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 40px;
+}
+
+@media screen and (max-width:412px) {
+
+
+  .navbar-light .navbar-brand {
+    font-size: 28px;
   }
- 
+  
+}
+

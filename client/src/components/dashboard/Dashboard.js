@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-import { Breadcrumb, BreadcrumbItem, Card } from 'react-bootstrap';
+import {Card } from 'react-bootstrap';
 class Dashboard extends Component {
     onLogoutClick = e => {
         e.preventDefault();
