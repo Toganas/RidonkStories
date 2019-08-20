@@ -6,3 +6,14 @@
 h3 {
   color:rgb(184, 54, 54);
 }
+
+.height {
+  height: 110px
+}
+
+@media screen and (max-width:412px) {
+
+
+ 
+  
+}

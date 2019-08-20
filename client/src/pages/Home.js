@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Jumbotron, Container, Breadcrumb, BreadcrumbItem, Button, Card } from 'react-bootstrap';
+import { Jumbotron, Container, Button, Card } from 'react-bootstrap';
 import ModalExample from '../components/StoryModal/StoryModal';
 
 import "./Home.css";
@@ -44,7 +44,7 @@ function Home() {
 
       <div className="Container">
         <div className="row One">
-          <div class="col-md-12">
+          <div className="col-md-12">
             <Jumbotron fluid>
               <Container>
                 <h1>About</h1>
@@ -89,7 +89,7 @@ function Home() {
 
           <div className="col-md-6 allTimeFav">
             <Card>
-              <Card.Body>
+              <Card.Body className="height"> 
                 <Card.Title>
 
                   <Card.Link href="/StoriesOfTheDay">View More Stories</Card.Link>

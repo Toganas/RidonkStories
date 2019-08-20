@@ -60,7 +60,7 @@ class NavigationBar extends Component {
                             <Nav.Link href="/ViewStories">View Stories</Nav.Link>
                             <NavDropdown title="Categories" id="basic-nav-dropdown">
                             {this.state.category.map(ele => {
-                                console.log(ele);
+                                
                                 var link = "/ViewStories/" + ele;
                                 return <NavDropdown.Item href={link}>{ele}</NavDropdown.Item>
                             })}
